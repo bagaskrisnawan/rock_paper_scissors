@@ -9,23 +9,36 @@ function getComputerChoice() {
     return Math.floor(Math.random() * 3)
 }
 
-function getHumanChoice(input) {
-    input = input.toLowerCase();
-    if (input === "batu") {
-        input = 0;
-    } else if (input === "gunting") {
-        input = 1;
-    } else if (input === "kertas") {
-        input = 2;
-    } else {
-        input = null;
+function getHumanChoice(input = prompt("Rock/Scissors/Paper").toString()) {
+    switch (input.toLowerCase()) {
+        case "batu":
+            return 0;
+        case "gunting":
+            return 1;
+        case "kertas":
+            return 2;
+        default:
+            return null;
     }
-
-    return input;
 }
 
-const humanChoice = getHumanChoice(prompt("masukan pilihanmu").toString());
-const computerChoice = getComputerChoice();
 
-console.log(humanChoice)
-console.log(computerChoice)
+function playRound(humanChoice, computerChoice) {
+    let x = humanChoice - computerChoice;
+    console.log(x)
+    switch (x) {
+        case 0:
+            return alert("DRAW");
+        case 1:
+        case -2:
+            return alert("LOSE");
+        case -1:
+        case 2:
+            return alert("WIN");
+        default:
+            return alert("ERROR");
+    }
+    
+}
+
+playRound(getHumanChoice(),getComputerChoice())
