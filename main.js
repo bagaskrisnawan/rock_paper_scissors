@@ -18,7 +18,7 @@ function getHumanChoice(input = prompt("Rock/Scissors/Paper").toString()) {
         case "kertas":
             return 2;
         default:
-            return null;
+            return undefined;
     }
 }
 
