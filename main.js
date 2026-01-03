@@ -25,7 +25,6 @@ function getHumanChoice(input = prompt("Rock/Scissors/Paper").toString()) {
 
 function playRound(humanChoice, computerChoice) {
     let x = humanChoice - computerChoice;
-    console.log(x)
     switch (x) {
         case 0:
             return alert("DRAW");
