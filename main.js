@@ -7,9 +7,8 @@ btn.forEach(btn => {
     const comResult = getComputerChoice();
     const humanResult = getHumanChoice(choice);
     const vsResult = playRound(humanResult,comResult);
+    result.textContent = Object.values(vsResult).join(" ");
     console.log(choice);
-    console.log(humanResult);
-    console.log(comResult);
     console.log(vsResult);
     })
 });
@@ -50,7 +49,9 @@ function playRound(human, com) {
 
   return {
     human: names[human],
+    str1 : "vs",
     computer: names[com],
+    str2 : "=",
     result
   };
 }
